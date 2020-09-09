@@ -6,20 +6,21 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "serverstart": "SET DEBUG=carnivorous_plant_site:* | npm run devstart",
-    "test": "mocha --reporter spec"
+    "test": "mocha --recursive"
   },
   "dependencies": {
-    "chai": "^4.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "mocha": "^8.1.3",
     "mongoose": "^5.10.3",
     "morgan": "~1.9.1",
     "pug": "^3.0.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.1.3",
     "nodemon": "^2.0.4"
   }
 }
