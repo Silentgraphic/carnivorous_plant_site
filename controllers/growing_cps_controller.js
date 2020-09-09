@@ -1,5 +1,5 @@
 exports.growing_plants = (req, res) => {
-    res.send('TODO');
+    res.render('growing_cps');
 }
 
 exports.enviroment = (req, res) => {

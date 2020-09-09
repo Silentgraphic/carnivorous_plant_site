@@ -1,3 +1,3 @@
 exports.plants_home = (req, res) => {
-    res.send('TODO');
+    res.render('cp_plants_home');
 }
