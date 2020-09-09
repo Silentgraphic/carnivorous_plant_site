@@ -1,3 +1,5 @@
-exports.index = function(req,res) {
+
+
+exports.index = (req,res) => {
     res.render('index', {title: 'Testing'});
 };
