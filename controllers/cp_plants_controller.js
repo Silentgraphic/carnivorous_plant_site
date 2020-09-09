@@ -1,3 +1,3 @@
-exports.plants = (req, res) => {
+exports.plants_home = (req, res) => {
     res.send('TODO');
 }
