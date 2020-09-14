@@ -1,7 +1,8 @@
-var expect = require('chai').expect;
-const express = require('express');
+const expect = require('chai').expect;
+const rewire = require('rewire');
 
-const index_controller = require('../../controllers/index_controller');
+
+const index_controller = rewire('../../controllers/index_controller');
 
 describe('index controller', function () {
     var Res_object;
