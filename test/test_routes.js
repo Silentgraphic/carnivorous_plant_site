@@ -22,7 +22,7 @@ describe('routing', function () {
     });
 
     describe('index', function () {
-        it('should return status 200', function (done) {
+        it('/ should return status 200', function (done) {
             requester
                 .get('/')
                 .end((err, res) => {
@@ -51,7 +51,7 @@ describe('routing', function () {
     });
 
     describe('plants', function () {
-        it('should return status 200', function (done) {
+        it('/plants should return status 200', function (done) {
             requester
                 .get('/plants')
                 .end((err, res) => {
@@ -80,7 +80,7 @@ describe('routing', function () {
     });
 
     describe('growing plants', function () {
-        it('should return status 200', function (done) {
+        it('/growingplants should return status 200', function (done) {
             requester
                 .get('/growingplants')
                 .end((err, res) => {
