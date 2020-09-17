@@ -1,3 +1,5 @@
 cp_plants.code-workspace
 node_modules/
 .vscode/
+.nyc_output/
+coverage/
