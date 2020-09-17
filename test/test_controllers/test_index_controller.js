@@ -18,7 +18,7 @@ describe('index controller', function () {
         };
     });
     describe('index', function () {
-        it('calling index.index should return render function', function (done) {
+        it('calling .index should return render function', function (done) {
             expect(index_controller.index).to.be.a('function');
             done();
         });
@@ -29,9 +29,8 @@ describe('index controller', function () {
         });
     });
     describe('about', function () {
-        it('calling index.about should return render function', function (done) {
-            var res = index_controller.index;
-            expect(res).to.be.a('function');
+        it('calling .about should return render function', function (done) {
+            expect(index_controller.about).to.be.a('function');
             done();
         });
         it('calling about should render about', function () {
