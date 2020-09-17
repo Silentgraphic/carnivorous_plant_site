@@ -27,6 +27,11 @@ describe('index controller', function () {
             index_controller.index(null, res);
             expect(res.template).to.be.equal('index');
         });
+        it('calling index should return a title', function () {
+            var res = Res_object;
+            index_controller.index(null, res);
+            expect(res.options).to.be.not.undefined;
+        });
     });
     describe('about', function () {
         it('calling .about should return render function', function (done) {
