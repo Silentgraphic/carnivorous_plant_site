@@ -1,35 +1,31 @@
 exports.growing_plants = (req, res) => {
     res.render('growing_cps');
-}
+};
 
 exports.enviroment = (req, res) => {
-    res.send('TODO');
-}
+    res.render('enviroment');
+};
 
 exports.propagation = (req, res) => {
-    res.send('TODO');
-}
+    res.render('propagation');
+};
 
 exports.soils = (req, res) => {
-    res.send('TODO');
-}
+    res.render('soils');
+};
 
 exports.water = (req, res) => {
-    res.send('TODO');
-}
+    res.render('water');
+};
 
 exports.light = (req, res) => {
-    res.send('TODO');
-}
-
-exports.light = (req, res) => {
-    res.send('TODO');
-}
+    res.render('light');
+};
 
 exports.feeding = (req, res) => {
-    res.send('TODO');
-}
+    res.render('feeding');
+};
 
 exports.pests = (req, res) => {
-    res.send('TODO');
-}
+    res.render('pests');
+};
