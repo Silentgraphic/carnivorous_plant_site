@@ -14,7 +14,7 @@ const { error } = require('console');
 var app = express();
 
 //Check for database UUID
-var connection_uuid = (function () {
+var database_uuid = (function () {
   let uuid = process.env.DATABASE_UUID;
   if (typeof uuid === 'undefined') {
     throw new Error('No database UUID defined');
@@ -25,7 +25,7 @@ var connection_uuid = (function () {
 })();
 
 //connect to the database
-const connection = mongoose.connect(connection_uuid, { useNewUrlParser: true, useUnifiedTopology: true });
+const connection = mongoose.connect(database_uuid, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Get the default connection
 var db = mongoose.connection;
