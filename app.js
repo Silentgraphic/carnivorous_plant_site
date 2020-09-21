@@ -4,19 +4,43 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-require('dotenv').config()
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const plantsRouter = require('./routes/plants');
 const growingplantsRouter = require('./routes/growing_cps');
+const { error } = require('console');
 
 var app = express();
+
+//Check for database UUID
+var connection_uuid = (function () {
+  let uuid = process.env.DATABASE_UUID;
+  if (typeof uuid === 'undefined') {
+    throw new Error('No database UUID defined');
+  }
+  else {
+    return uuid;
+  }
+})();
+
+//connect to the database
+const connection = mongoose.connect(connection_uuid, { useNewUrlParser: true, useUnifiedTopology: true });
+
+//Get the default connection
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', () => {
+  console.error.bind(console, 'MongoDB connection error:');
+  db = mongoose.disconnect();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-//app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
