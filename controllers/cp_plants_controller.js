@@ -14,7 +14,7 @@ function set_render_info(info) {
 function plants_info_database_callback(err, plant) {
     if (err) throw err;
     if (plant === null) throw new Error('No plant named that');
-    else set_render_info(plant)
+    else set_render_info(plant);
 }
 
 exports.plants_home = (req, res, next) => {
@@ -42,6 +42,11 @@ exports.plants_info = [
     },
     //Render response
     (req, res) => {
-        res.render('plant_info_layout', { title: render_info.title, plant_name: render_info.title, plant_text: render_info.plant_text });
+        res.render('plant_info_layout', {
+            title: render_info.title,
+            plant_name: render_info.title,
+            plant_text: render_info.plant_text,
+            plant_image: render_info.images[0]
+        });
     }
 ];
