@@ -8,18 +8,18 @@ const cp_plants_controller = rewire('../../controllers/cp_plants_controller');
 
 describe('plants controller', function () {
     //Setup a response object constructor
-    function Res_object () {
+    function Res_object() {
         this.template = null,
-        this.options = null,
-        this.render = function (template, options) {
-            this.template = template;
-            this.options = options;
-        }
+            this.options = null,
+            this.render = function (template, options) {
+                this.template = template;
+                this.options = options;
+            };
     };
 
     //Setup a request object
     function Req_object() {
-        this.params = { plant_name: null }
+        this.params = { plant_name: null };
     };
 
     var Render_vars;
@@ -62,17 +62,20 @@ describe('plants controller', function () {
         });
 
         it("calling .plants_info without a request should result in an error", function (done) {
-            expect(() => { cp_plants_controller.plants_info[1](null, new  Res_object()); }).to.throw();
+            expect(() => { cp_plants_controller.plants_info[1](null, new Res_object()); }).to.throw();
             done();
         });
         describe('Response object', function () {
             let res;
             let req;
 
+            before(function () {
+                cp_plants_controller.__set__("render_info", Render_vars);
+            });
+
             beforeEach('set up res', function () {
                 res = new Res_object();
-                req =  new Req_object();
-                cp_plants_controller.__set__("render_info", Render_vars);
+                req = new Req_object();
             });
 
             afterEach(function () {
@@ -92,8 +95,14 @@ describe('plants controller', function () {
 
             it('.text should be a string', function () {
                 cp_plants_controller.plants_info[1](req, res);
-                expect(res.options.title).to.be.a('string');
+                expect(res.options.plant_text).to.be.a('string');
             });
+            it('.images should be a array', function () {
+                cp_plants_controller.plants_info[1](req, res);
+                console.log(res);
+                expect(res.options.plant_image).to.be.an('array');
+            }
+            );
         });
     });
 });

@@ -46,7 +46,7 @@ exports.plants_info = [
             title: render_info.title,
             plant_name: render_info.title,
             plant_text: render_info.plant_text,
-            plant_image: render_info.images[0]
+            plant_image: render_info.images
         });
     }
 ];
