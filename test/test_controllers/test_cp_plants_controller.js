@@ -99,10 +99,24 @@ describe('plants controller', function () {
             });
             it('.images should be a array', function () {
                 cp_plants_controller.plants_info[1](req, res);
-                console.log(res);
                 expect(res.options.plant_image).to.be.an('array');
             }
             );
+        });
+    });
+    describe('plant_info_database_callback', function () {
+        let plant_info_database_callback = cp_plants_controller.__get__("plants_info_database_callback");
+
+        it('should throw database error if passed one', function () {
+            expect(() => { plant_info_database_callback(new Error('Database error')); }).to.throw('Database error');
+        });
+
+        it('should throw error if handed no value', function () {
+            expect(() => { plant_info_database_callback(null, null); }).to.throw('No plant named that');
+        });
+
+        it('should call set_render_info', function () {
+            expect(plant_info_database_callback(null, 'test'));
         });
     });
 });
