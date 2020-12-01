@@ -11,10 +11,10 @@ function set_render_info(info) {
     render_info.title = render_info.title.charAt(0).toUpperCase() + render_info.title.slice(1);
 }
 
-function plants_info_database_callback(err, plant) {
+function plants_info_database_callback(err, plant, render_info) {
     if (err) throw err;
     if (plant === null) throw new Error('No plant named that');
-    else set_render_info(plant);
+    else render_info(plant);
 }
 
 exports.plants_home = (req, res, next) => {
@@ -31,7 +31,7 @@ exports.plants_info = [
         PlantModel.findOne({ title: req.params.plant_name },
             (err, plant) => {
                 try {
-                    plants_info_database_callback(err, plant);
+                    plants_info_database_callback(err, plant, set_render_info);
                     next();
                 } catch (error) {
                     if (error.message == 'No plant named that') return next(createError(404));
