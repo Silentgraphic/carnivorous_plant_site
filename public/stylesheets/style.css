@@ -1,9 +1,18 @@
 body {
-    padding: 0px 30px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: rgb(63, 66, 66);
 }
 
 .navbar a {
   color: grey;
+}
+
+main{
+  padding: 0px 30px;
+}
+
+footer {
+  padding-top: 10px;
+  background-color: grey;
+  text-align: center;
 }
