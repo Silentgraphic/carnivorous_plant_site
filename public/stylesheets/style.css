@@ -3,11 +3,7 @@ body {
     background-color: rgb(63, 66, 66);
 }
 
-/* .navbar{
-  padding: 20px 200px;
-} */
-
-.navbar a {
+.navbar a, footer a {
   color: grey;
 }
 
@@ -25,7 +21,9 @@ body {
   }
 }
 
-
+main{
+  padding:0 30px;
+}
 
 footer {
   padding-top: 10px;
