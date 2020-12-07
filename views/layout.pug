@@ -12,27 +12,39 @@ html(lang = 'eng')
     link(rel = 'stylesheet' href='/stylesheets/style.css')
   body
     header
-      nav(class='navbar navbar-expand-lg navbar-dark bg-dark')
+    div(class="container d-flex justify-content-lg-between")
+      nav(class='navbar navbar-expand-lg navbar-dark w-100')
         a(class='navbar-brand' href='/') Carnivous Plants
-        button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+        button(class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
           span(class="navbar-toggler-icon")
         div(class="collapse navbar-collapse" id="navbarNav")
           ul(class="navbar-nav")
             li(class="plants dropdown")
-              a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Plants
-              div(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+              a(class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="100,10") Plants
+              div(class="dropdown-menu dropdown-menu-left text-dark bg-transparent text-center" aria-labelledby="navbarDropdownMenuLink")
                 -var plant_list = process.env.PLANTS_LIST.split(",")
                 each val in plant_list
                   a(class="dropdown-item" href="/plants/"+val)=val.charAt(0).toUpperCase() + val.slice(1)
             li(class="growing dropdown")
-              a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Growing plants
-              div(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+              a(class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Growing plants
+              div(class="dropdown-menu text-dark bg-transparent text-center" aria-labelledby="navbarDropdownMenuLink")
                 a(class="dropdown-item" href="/growingplants/enviroment") Enviroment
+                a(class="dropdown-item" href="/growingplants/propagation") Propagation
+                a(class="dropdown-item" href="/growingplants/soils") Soils
+                a(class="dropdown-item" href="/growingplants/water") Water
+                a(class="dropdown-item" href="/growingplants/light") Light
+                a(class="dropdown-item" href="/growingplants/feeding") Feeding
+                a(class="dropdown-item" href="/growingplants/pests") Pests
             li(class="nav-item")
               a(class="nav-link" href="/about") About
     main
       block content
-    footer(class="fixed-bottom text-light")
+    footer(class="fixed-bottom text-light container-fluid")
+      div(class="row")
+        div(class="col-sm")
+          p hello world
+        div(class="col-sm")
+          p hello world
       p &copy Nobody 
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
