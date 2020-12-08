@@ -1,6 +1,7 @@
 extends layout
 
 block content
-    h1 !{plant_name}
+    div(class="container-fluid" id="image_of_plant")
+        img(src=plant_image[0], alt=plant_name)
     p !{plant_text}
-    img(src=plant_image[0], alt=plant_name)
+    h1 !{plant_name}
