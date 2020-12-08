@@ -1,5 +1,8 @@
 extends layout
 
+block stylesheets 
+    link(rel = 'stylesheet' href='/stylesheets/plant_info.css')
+
 block content
     div(class="container-fluid" id="image_of_plant")
         img(src=plant_image[0], alt=plant_name)
