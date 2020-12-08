@@ -3,25 +3,27 @@ body {
     background-color: rgb(63, 66, 66);
 }
 
-.navbar a, footer a {
-  color: grey;
+.navbar a,
+footer a {
+    color: grey;
 }
 
-.dropdown-menu{
-  border:5px;
+.dropdown-menu {
+    border: 5px;
 }
 
 @media (min-width:992px) {
-  .dropdown-menu{
-    right: auto;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-  }
+    .dropdown-menu {
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+        -o-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
 }
 
 footer {
-  padding-top: 10px;
-  text-align: center;
+    padding-top: 10px;
+    text-align: center;
+    z-index: 2;
 }
