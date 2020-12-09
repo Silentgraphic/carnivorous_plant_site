@@ -1,12 +1,21 @@
-#image_of_plant{
-    padding:0px;
+#image_of_plant {
+    padding: 0px;
     margin-bottom: 20px;
-    background-color: slategray;
-}
-#image_of_plant img{
-    min-height: 25%;
+    background-color:rgba(102, 100, 100, 0.685);
 }
 
-.title_of_article{
+#image_of_plant img {
+    width: auto;
+    max-height: 500px;
+}
+
+@media(max-width:576px) {
+    #image_of_plant img {
+        max-width: 75%;
+        height: auto;
+    }
+}
+
+.title_of_article {
     text-align: center;
 }

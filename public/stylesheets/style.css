@@ -5,7 +5,7 @@ body {
 
 .navbar a,
 footer a {
-    color: grey;
+    color: rgb(228, 227, 227);
 }
 
 .dropdown-menu {
