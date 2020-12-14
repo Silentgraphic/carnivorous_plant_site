@@ -1,7 +1,7 @@
 #image_of_plant {
     padding: 0px;
     margin-bottom: 20px;
-    background-color:rgba(102, 100, 100, 0.685);
+    background-color: rgba(102, 100, 100, 0.685);
 }
 
 #image_of_plant img {
@@ -16,10 +16,15 @@
     }
 }
 
-.title_of_article {
+.article_container {
     text-align: center;
 }
 
-.title_of_article br{
+.article_container img {
+    width: auto;
+    max-height: 200px;
+}
+
+.article_container br {
     margin-bottom: 10px;
 }

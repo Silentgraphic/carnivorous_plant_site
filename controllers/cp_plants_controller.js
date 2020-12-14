@@ -6,7 +6,7 @@ const { create } = require('../models/plant_info');
 
 let render_info = null;
 
-function set_render_info(info) {
+function set_title(info) {
     render_info = info;
     render_info.title = render_info.title.charAt(0).toUpperCase() + render_info.title.slice(1);
 }
@@ -31,7 +31,7 @@ exports.plants_info = [
         PlantModel.findOne({ title: req.params.plant_name },
             (err, plant) => {
                 try {
-                    plants_info_database_callback(err, plant, set_render_info);
+                    plants_info_database_callback(err, plant, set_title);
                     next();
                 } catch (error) {
                     if (error.message == 'No plant named that') return next(createError(404));

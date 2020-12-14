@@ -115,16 +115,16 @@ describe('plants controller', function () {
             expect(() => { plant_info_database_callback(null, null); }).to.throw('No plant named that');
         });
 
-        it('should call set_render_info', function (done) {
+        it('should call set_title', function (done) {
 
             //Test for some reason always returns undefined if set as return value hence this awful code
             let test_var;
 
-            function set_render_info(plant) {
+            function set_title(plant) {
                 test_var = 'test';
             };
 
-            plant_info_database_callback(null, 'test', set_render_info);
+            plant_info_database_callback(null, 'test', set_title);
 
             expect(test_var).to.be.string('test');
             done();
