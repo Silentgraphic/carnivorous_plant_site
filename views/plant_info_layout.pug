@@ -10,5 +10,22 @@ block content
         div(class="class=row h-100 justify-content-center align-items-center")
             div(class="article_container col")
                 h1 !{plant_name}
-                each text in plant_text
-                    p !{text} 
+                each text, index in plant_text
+                    div(class="col")
+                        p !{text} 
+                    div(class="col image-container")
+                        if index < plant_image.length
+                            img(class="img-fluid plant_images" src=plant_image[index] alt=plant_name align="right")
+    script.
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                var images = document.getElementsByClassName("plant_images");
+                for( i = 0; i <images.length; i++){
+                    images[i].setAttribute("align", "middle")
+                }
+            }
+        }
+
+        var x = window.matchMedia("(max-width:576px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes

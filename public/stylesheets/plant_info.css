@@ -22,9 +22,10 @@
 
 .article_container img {
     width: auto;
-    max-height: 200px;
+    max-height: 250px;
+    padding: 10px;
 }
 
-.article_container br {
+.article_container p {
     margin-bottom: 10px;
 }
