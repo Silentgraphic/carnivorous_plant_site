@@ -19,3 +19,7 @@
 .title_of_article {
     text-align: center;
 }
+
+.title_of_article br{
+    margin-bottom: 10px;
+}
