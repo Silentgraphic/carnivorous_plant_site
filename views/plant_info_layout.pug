@@ -10,5 +10,5 @@ block content
         div(class="class=row h-100 justify-content-center align-items-center")
             div(class="article_container col")
                 h1 !{plant_name}
-                img(class="img-fluid" src=plant_image[0] alt=plant_name align="right") 
-                p !{plant_text}
+                each text in plant_text
+                    p !{text} 
