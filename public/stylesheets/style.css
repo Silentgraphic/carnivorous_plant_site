@@ -5,11 +5,12 @@ body {
 
 .navbar a,
 footer a {
-    color: rgb(228, 227, 227);
+    color: rgb(255, 255, 255);
 }
 
 .dropdown-menu {
     border: 5px;
+    background-color: darkgray;
 }
 
 @media (min-width:992px) {
