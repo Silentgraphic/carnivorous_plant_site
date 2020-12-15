@@ -13,9 +13,12 @@ block content
                 each text, index in plant_text
                     div(class="col")
                         p !{text} 
-                    div(class="col image-container")
-                        if index < plant_image.length
-                            img(class="img-fluid plant_images" src=plant_image[index] alt=plant_name align="right")
+                    if index + 1 < plant_image.length
+                        div(class="col image-container")
+                            if index % 2 == 0
+                                img(class="img-fluid plant_images" src=plant_image[index + 1] alt=index + 1 align="right")
+                            else
+                                img(class="img-fluid plant_images" src=plant_image[index + 1] alt=index + 1 align="left")
     script.
         function myFunction(x) {
             if (x.matches) { // If media query matches
