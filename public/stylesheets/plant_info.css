@@ -9,23 +9,22 @@
     max-height: 500px;
 }
 
-@media(max-width:576px) {
+@media(max-width: 600px) {
     #image_of_plant img {
         max-width: 75%;
         height: auto;
     }
+    .plant_images {
+        margin:10px 0px !important;
+    }
 }
-
-.article_container {
-    text-align: center;
-}
-
-.article_container img {
+.plant_images {
     width: auto;
     max-height: 250px;
-    padding: 10px;
+    margin: 10px 0px;
 }
 
-.article_container p {
-    margin-bottom: 10px;
+
+.article-col {
+    margin: 10px 0px;
 }
