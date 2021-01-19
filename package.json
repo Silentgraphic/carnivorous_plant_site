@@ -13,9 +13,9 @@
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
-    "express-validator": "^6.9.1",
+    "express-validator": "^6.9.2",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.11.9",
+    "mongoose": "^5.11.12",
     "morgan": "~1.9.1",
     "pug": "^3.0.0"
   },
@@ -24,7 +24,7 @@
     "chai-arrays": "^2.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^8.2.1",
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.7",
     "nyc": "^15.1.0",
     "rewire": "^5.0.0"
   }
